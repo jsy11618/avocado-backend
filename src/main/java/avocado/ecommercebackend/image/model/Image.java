@@ -1,4 +1,4 @@
-package avocado.ecommercebackend.product.model;
+package avocado.ecommercebackend.image.model;
 
 import lombok.Data;
 
@@ -9,14 +9,11 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class Product {
-
-
+public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String productName;
-    private int stockQuantity;
-    private int price;
+    private String imageUrl;
+
 }

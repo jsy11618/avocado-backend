@@ -1,22 +1,24 @@
-package avocado.ecommercebackend.product.model;
+package avocado.ecommercebackend.category.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Data
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @Entity
-public class Product {
-
+public class Category {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String productName;
-    private int stockQuantity;
-    private int price;
+    private int type;
+    private String categoryName;
+
 }
