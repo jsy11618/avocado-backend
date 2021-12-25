@@ -7,7 +7,7 @@ import lombok.Data;
 public class IProduct {
 
     private Long id;
-    private String productName;
-    private int stockQuantity;
-    private int price;
+    private Long productName;
+    private Long stockQuantity;
+    private Long price;
 }

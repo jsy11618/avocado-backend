@@ -3,13 +3,11 @@ package avocado.ecommercebackend.product.controller;
 import avocado.ecommercebackend.product.model.Product;
 import avocado.ecommercebackend.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("/product")
 public class ProductController {
 
     @Autowired
