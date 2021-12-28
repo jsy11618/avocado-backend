@@ -6,7 +6,10 @@ import avocado.ecommercebackend.category.repository.CategoryRepository;
 import avocado.ecommercebackend.product.model.Product;
 import avocado.ecommercebackend.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
+=======
+>>>>>>> 437ce0f490dea5db578f0b80e4f2cf514e4a4bc8
 import org.springframework.stereotype.Service;
 
 import java.util.List;

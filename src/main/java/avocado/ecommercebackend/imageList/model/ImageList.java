@@ -20,7 +20,7 @@ public class ImageList {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product productImage;
+    private Product product;
 
     public ImageList() {
     }
@@ -30,11 +30,11 @@ public class ImageList {
     }
 
     public Product getProduct() {
-        return productImage;
+        return product;
     }
 
     public ImageList(Image image, Product product) {
         this.image = image;
-        this.productImage = product;
+        this.product = product;
     }
 }

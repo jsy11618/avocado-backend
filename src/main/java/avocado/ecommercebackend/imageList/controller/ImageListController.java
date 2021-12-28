@@ -39,7 +39,7 @@ public class ImageListController {
     public Image getImage(@PathVariable Long id){
         return imageService.getImage(id).get();
     }
-    @GetMapping("/getimageproduct/{id}")
+    @GetMapping("/getproduct/{id}")
     public Product getProduct(@PathVariable Long id){
         return  productService.getProduct(id).get();
     }

@@ -41,7 +41,11 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
+<<<<<<< HEAD
     public List<Product> getCategoryByProductById(Long id) {
+=======
+    public List<Image> getImageByProductById(Long id) {
+>>>>>>> 437ce0f490dea5db578f0b80e4f2cf514e4a4bc8
         return imageRepository.findAllByProductId(id);
     }
 }
