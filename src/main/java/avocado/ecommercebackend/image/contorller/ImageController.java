@@ -27,14 +27,8 @@ public class ImageController {
     public Image get(@PathVariable Long id){
         return imageService.getImage(id).get();
     }
-<<<<<<< HEAD
-    @GetMapping("/getCategoryByProductById/{id}")
-    public List<Product> getCategoryByProductById(@PathVariable Long id){
-        return imageService.getCategoryByProductById(id);
-=======
     @GetMapping("/getAll/{id}")
     public List<Image> getAllImageByProductId(@PathVariable Long id){
         return imageService.getImageByProductById(id);
->>>>>>> 437ce0f490dea5db578f0b80e4f2cf514e4a4bc8
     }
 }
