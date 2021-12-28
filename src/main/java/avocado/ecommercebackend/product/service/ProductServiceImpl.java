@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
+
 @Service
 public class ProductServiceImpl implements ProductService{
 
@@ -24,7 +26,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Optional<Product> getProduct(Long id) {
+    public Optional<Product> getProductById(Long id) {
         return Optional.ofNullable(productRepository.findById(id)).get();
     }
 }

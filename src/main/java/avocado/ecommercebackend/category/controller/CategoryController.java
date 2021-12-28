@@ -1,24 +1,26 @@
 package avocado.ecommercebackend.category.controller;
 
 
+import avocado.ecommercebackend.category.dto.CategoryDto;
 import avocado.ecommercebackend.category.model.Category;
 import avocado.ecommercebackend.category.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
+import avocado.ecommercebackend.product.model.Product;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/category")
 public class CategoryController {
 
-    @Autowired
-    private CategoryService categoryService;
+
+    private final CategoryService categoryService;
 
     @PostMapping("/add")
-    public Category add(Category category){
-        return categoryService.addCategory(category);
+    public Category add(@RequestBody CategoryDto categoryDto){
+        return categoryService.addCategory(categoryDto);
     }
     @GetMapping("/getall")
     public List<Category>getAllCategory(){
@@ -28,5 +30,8 @@ public class CategoryController {
     public Category get(@PathVariable Long id){
         return categoryService.getCategory(id).get();
     }
-
+    @GetMapping("/getCategoryByProductById/{id}")
+    public List<Product> getCategoryByProductById(@PathVariable Long id){
+       return categoryService.getCategoryByProductById(id);
+        }
 }

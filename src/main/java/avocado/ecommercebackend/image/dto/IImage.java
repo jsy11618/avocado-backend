@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 public class IImage {
 
-    private Long id;
-    private Long imageUrlId;
+
+    private String imageUrl;
+    private Long productId;
 }
