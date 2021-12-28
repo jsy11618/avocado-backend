@@ -7,6 +7,7 @@ import lombok.Data;
 
         private Long id;
         private Long userId;
-//    private Long productId;
+        private Long productId;
+        private String text;
     }
 

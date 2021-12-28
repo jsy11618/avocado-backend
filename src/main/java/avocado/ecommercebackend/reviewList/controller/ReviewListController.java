@@ -10,29 +10,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping
+
 public class ReviewListController {
-
-        @Autowired
-        private ReviewListService reviewListService;
-
-        @Autowired
-        private UserService userService;
-
-//    @Autowired
-//    private  ProductService productService;
-
-        @PostMapping("/add")
-        public ReviewList add(@RequestBody IReviewList iReviewList) {
-            return reviewListService.addReviewList(
-                    new ReviewList(
-                            userService.getUser(iReviewList.getUserId()).get(),
-                            productService.getProduct(iReviewList.getProductId()).get()
-                    )
-            );
-
-        }
+//
+//        @Autowired
+//        private ReviewListService reviewListService;
+//
+//        @Autowired
+//        private UserService userService;
+//
+////    @Autowired
+////    private  ProductService productService;
+//
+//        @PostMapping("/add")
+//        public ReviewList add(@RequestBody IReviewList iReviewList) {
+//            return reviewListService.addReviewList(
+//                    new ReviewList(
+//                            userService.getUser(iReviewList.getUserId()).get(),
+//                            productService.getProduct(iReviewList.getProductId()).get()
+//                    )
+//            );
+//
+//        }
 
 }
 
