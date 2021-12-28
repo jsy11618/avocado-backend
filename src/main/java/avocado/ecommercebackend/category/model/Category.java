@@ -1,11 +1,9 @@
 package avocado.ecommercebackend.category.model;
 
+import avocado.ecommercebackend.product.model.Product;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -20,5 +18,14 @@ public class Category {
     private Long id;
     private int type;
     private String categoryName;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
+    @Builder
+    public Category(int type, String categoryName, Product product) {
+        this.type = type;
+        this.categoryName = categoryName;
+        this.product = product;
+    }
 }
