@@ -20,14 +20,14 @@ public class CategoryList {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product productCategory;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
     public Product getProduct() {
-        return productCategory;
+        return product;
     }
 
     public Category getCategory() {
@@ -35,7 +35,7 @@ public class CategoryList {
     }
 
     public CategoryList(Product product, Category category) {
-        this.productCategory = product;
+        this.product = product;
         this.category = category;
     }
 }
