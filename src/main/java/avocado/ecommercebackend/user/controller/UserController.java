@@ -3,6 +3,7 @@ package avocado.ecommercebackend.user.controller;
 
 import avocado.ecommercebackend.user.model.User;
 import avocado.ecommercebackend.user.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,13 +13,15 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api") //원래 "/user"였음
+@RequiredArgsConstructor
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
     @PostMapping("/user/add")
-    public User add(@RequestBody User user){return userService.addUser(user);}
+    public User add(@RequestBody User user){
+        System.out.println(user.toString());
+        return userService.addUser(user);}
 
     @GetMapping("/user/getAll")
     public List<User> getAllUser(){return userService.getAllUser();}
