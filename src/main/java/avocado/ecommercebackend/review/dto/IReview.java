@@ -6,7 +6,8 @@ import lombok.Data;
     public class IReview {
 
         private Long id;
+        private String text;
         private Long userId;
-//    private Long productId;
+        private Long productId;
     }
 
