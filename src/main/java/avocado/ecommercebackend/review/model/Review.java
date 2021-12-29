@@ -1,6 +1,7 @@
 package avocado.ecommercebackend.review.model;
 
 
+import avocado.ecommercebackend.base.UtilTimeSetter;
 import avocado.ecommercebackend.product.model.Product;
 import avocado.ecommercebackend.user.model.User;
 import lombok.Builder;
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Entity
-public class Review {
+public class Review extends UtilTimeSetter {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

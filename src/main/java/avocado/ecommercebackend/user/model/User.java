@@ -1,5 +1,6 @@
 package avocado.ecommercebackend.user.model;
 
+import avocado.ecommercebackend.base.UtilTimeSetter;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @Entity
-public class User {
+public class User extends UtilTimeSetter {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
