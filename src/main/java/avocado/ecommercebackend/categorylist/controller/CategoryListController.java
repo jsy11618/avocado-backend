@@ -29,7 +29,7 @@ public class CategoryListController {
     public CategoryList add(@RequestBody ICategoryList iCategoryList){
         return categoryListService.addCategoryList(
                 new CategoryList(
-                        productService.getProduct(iCategoryList.getProductCategoryId()).get(),
+                        productService.getProductById(iCategoryList.getProductCategoryId()).get(),
                         categoryService.getCategory(iCategoryList.getCategoryId()).get()
         ));
 
@@ -44,6 +44,6 @@ public class CategoryListController {
     }
     @GetMapping("/getproduct/{id}")
     public Product getProduct(@PathVariable Long id){
-        return productService.getProduct(id).get();
+        return productService.getProductById(id).get();
     }
 }

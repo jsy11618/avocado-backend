@@ -28,7 +28,7 @@ public class ImageListController {
         return imageListService.addImageList(
                 new ImageList(
                         imageService.getImage(iImageList.getImageId()).get(),
-                        productService.getProduct(iImageList.getProductImageId()).get()));
+                        productService.getProductById(iImageList.getProductImageId()).get()));
     }
 
     @GetMapping("/getall")
@@ -41,6 +41,6 @@ public class ImageListController {
     }
     @GetMapping("/getproduct/{id}")
     public Product getProduct(@PathVariable Long id){
-        return  productService.getProduct(id).get();
+        return  productService.getProductById(id).get();
     }
 }

@@ -5,7 +5,6 @@ import avocado.ecommercebackend.product.service.ProductService;
 import avocado.ecommercebackend.review.dto.IReview;
 import avocado.ecommercebackend.review.model.Review;
 import avocado.ecommercebackend.review.service.ReviewService;
-import avocado.ecommercebackend.reviewList.dto.IReviewList;
 import avocado.ecommercebackend.user.model.User;
 import avocado.ecommercebackend.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
