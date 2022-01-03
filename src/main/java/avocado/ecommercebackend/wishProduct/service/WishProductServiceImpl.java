@@ -8,10 +8,11 @@ import avocado.ecommercebackend.wishProduct.dto.WishProductDto;
 import avocado.ecommercebackend.wishProduct.model.WishProduct;
 import avocado.ecommercebackend.wishProduct.repository.WishProductRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class WishProductServiceImpl implements WishProductService {
@@ -21,6 +22,7 @@ public class WishProductServiceImpl implements WishProductService {
 
     @Override
     public WishProduct addProduct(WishProductDto wishProductDto) {
+        log.info("wishList add in the product");
         Wish wish = wishService.getWish(wishProductDto.getWishId()).get();
         Product product = productService.getProductById(wishProductDto.getProductId()).get();
         return wishProductRepository.save(new WishProduct(wish, product));
@@ -28,6 +30,7 @@ public class WishProductServiceImpl implements WishProductService {
 
     @Override
     public List<WishProduct> getWishList(Long id) {
+        log.info("wishList get in the wishList");
         return wishProductRepository.findAllByWishId(id);
     }
 }
