@@ -34,6 +34,7 @@ public class CategoryListController {
         ));
 
     }
+
     @GetMapping("/getall")
     public List<CategoryList>getAllCategoryList(){
         return categoryListService.getAllCategoryList();
