@@ -36,4 +36,18 @@ public class CartProductServiceImpl implements CartProductService {
     public List<CartProduct> getByCartId(Long id) {
         return cartProductRepository.findAllByCartId(id);
     }
+
+    @Override
+    public void deleteProduct(Long id) {
+        CartProduct cartProduct = cartProductRepository.getById(id);
+        cartProductRepository.delete(cartProduct);
+
+    }
+
+    @Override
+    public CartProduct addQuantity(Long id, int quantity) {
+        CartProduct cartProduct = cartProductRepository.getById(id);
+        cartProduct.setQuantity(quantity);
+        return cartProductRepository.save(cartProduct);
+    }
 }
